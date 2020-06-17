@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>
-		
-		
-	</title>
-</head>
-<body>
-<h1>Razak</h1>
-</body>
-</html>
+<h2>All posts!</h2>
+
+<% @posts.each do |post|%>
+<h3><%= post.title %></h3>
+<p><%= post.body%></p>
+<h5>By: <%= post.author.name %></h5>
+<%end%>
+
+<p>
+	 <span><%= link_to 'Log out', destroy_author_session_path,  method: :delete %></span>
+</p>
