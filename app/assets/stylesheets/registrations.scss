@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cas {
-width: 50%;
+width: 40%;
 margin: auto;
 }
 
 .cas input {
-	width: 70%;
+	width: 100%;
 	height: 2.5rem;
 }
 
@@ -30,4 +30,8 @@ margin: auto;
 .author {
 	margin-right: 0.6rem;
 	padding-top: 1rem;
+}
+
+.cad {
+	margin-left: 30%;
 }
