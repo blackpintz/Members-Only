@@ -31,14 +31,19 @@
     </div>
 
     <div class="navbar-end">
+       <% if author_signed_in? %>
+       <div class="navbar-item">
+         <span class="title is-5 author"><%= current_author.name%></span>
+         <span><%= link_to 'Log out', destroy_author_session_path,  method: :delete, class: "button is-primary is-light" %></span>
+       </div>
+       <% else %>
       <div class="navbar-item">
         <div class="buttons">
-
           <%= link_to  "Sign up", new_author_registration_path, class: "button is-primary" %>
-
           <%= link_to  "Log In", author_session_path, class: "button is-primary" %>
         </div>
       </div>
+      <% end%>
     </div>
   </div>
 </nav>

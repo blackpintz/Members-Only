@@ -1,24 +1,36 @@
-<h2>All posts!</h2>
+<div class="container">
+<div class="is-large post-header"><strong>All Posts</strong></div>
 
 <% @posts.each do |post|%>
-<h3><%= post.title %></h3>
-<p><%= post.body%></p>
-
-<% if author_signed_in? %>
- <h5>
-	By: <%= post.author.name %>
-		
-  </h5>
-  <% else %>
- <h5>
-	By: **********
-		
-  </h5>
-  <% end %>
+<div class="card">
+	<header class="card-header">
+		 <p class="card-header-title">
+		 	<%= post.title %>
+		 </p>
+	</header>
+	<div class="card-content">
+		<div class="content">
+			<%= post.body%><br>
+			<time datetime="2020-1-1"><%= post.created_at%></time>
+		</div>
+		<% if author_signed_in? %>
+		 <p class="subtitle is-6">
+			By: <%= post.author.name %>
+				
+		  </p>
+  		<% else %>
+		 <h5>
+			By: **********
+				
+		  </h5>
+	   <% end %>
+	</div>
+</div>
 <%end%>
 
 <% if author_signed_in? %>
- <p>
-	 <span><%= link_to 'Log out', destroy_author_session_path,  method: :delete %></span>
+ <p class="post-header">
+ 	<span><%= link_to 'Create new post', new_post_path, class: "button is-primary is-light"%></span>
 </p>
 <% end %>
+</div>

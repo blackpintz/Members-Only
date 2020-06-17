@@ -1,4 +1,5 @@
-<h2>Creating a new Post.</h2>
+<div class="post-header">
+<h2 class="title is-1">Creating a new Post.</h2>
 
 <% if @post.errors.any?%>
 <h3>Your post didn't save because of the following:</h3>
@@ -12,17 +13,19 @@
 <%= form_with scope: :post, url: posts_path, local: true do |f| %>
 <p>
     <%= f.label :title%>
-    <%= f.text_field :title%>
+    <%= f.text_field :title, class: "input"%>
 </p>
 
 <p>
     <%= f.label :body%>
-    <%= f.text_area :body%>
+    <%= f.text_area :body, class: "textarea"%>
 </p>
 
 <p>
-    <%= f.submit "Create Post"%>
+    <%= f.submit "Create Post", class: "button is-primary post-button"%>
 </p>
 <% end %>
 
 <p><%= link_to 'Go Back', posts_path %></p>
+
+</div>
